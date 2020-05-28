@@ -1,6 +1,6 @@
 resource "digitalocean_droplet" "node" {
     image = "centos-7-x64"
-    count = 5
+    count = var.nodes_count
     name = "node-${count.index+1}"
     region = "fra1"
     size = "s-2vcpu-4gb"

@@ -19,3 +19,6 @@ variable ssh_fingerprint {
   # Значение по умолчанию
   default = "51:a7:c4:73:94:f2:cf:00:66:1b:90:a7:b9:cc:42:e8"
 }
+variable nodes_count {
+  description = "Count of k8s nodes"
+}
