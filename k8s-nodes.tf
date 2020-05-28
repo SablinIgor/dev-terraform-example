@@ -1,3 +1,7 @@
+resource "digitalocean_tag" "k8s" {
+    name = "k8s"
+}
+
 resource "digitalocean_droplet" "node" {
     image = "centos-7-x64"
     count = var.nodes_count
@@ -5,6 +9,7 @@ resource "digitalocean_droplet" "node" {
     region = "fra1"
     size = "s-2vcpu-4gb"
     private_networking = true
+    tags = ["${digitalocean_tag.k8s.name}"]
     ssh_keys = [
       var.ssh_fingerprint
     ]
