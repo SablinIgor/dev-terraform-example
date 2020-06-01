@@ -7,7 +7,7 @@ resource "digitalocean_droplet" "node" {
     count = var.nodes_count
     name = "node-${count.index+1}"
     region = "fra1"
-    size = "s-4vcpu-8gb"
+    size = "s-2vcpu-4gb"
     private_networking = true
     tags = ["${digitalocean_tag.k8s.name}"]
     ssh_keys = [
